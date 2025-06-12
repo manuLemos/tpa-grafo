@@ -9,4 +9,14 @@ public class Aresta<T> {
         this.destino = destino;
         this.peso = peso;
     }
+
+    public Vertice<T> getOrigem() {
+        return origem;
+    }
+    public Vertice<T> getDestino() {
+        return destino;
+    }
+    public float getPeso() {
+        return peso;
+    }
 }
