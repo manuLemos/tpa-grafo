@@ -1,0 +1,54 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Build directory
+/out/
+target/
+build/
+
+# Maven
+/logs/
+*.war
+*.ear
+*.jar
+
+# Gradle
+.gradle/
+build/
+
+# Eclipse (caso o projeto seja aberto por lá em algum momento)
+*.classpath
+*.project
+*.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java-specific
+*.jar
+*.war
+*.ear
+
+# Environment files
+.env
+*.env
+
+# Ignore generated files
+gen/
+
+# VSCode (caso alguém use)
+.vscode/
+
+# User-specific files
+*.swp
+*.swo
+*.bak
+*.tmp
