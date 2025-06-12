@@ -12,4 +12,15 @@ public class Grafo<T> {
         return novo;
     }
 
+    public Vertice<T> obterVertice(T valor){
+        Vertice<T> v;
+        for(int i=0;i<this.vertices.size();i++){
+            v=this.vertices.get(i);
+            if(v.getValor().equals(valor))
+                return v;
+        }
+        //Se chegou até aqui é poruqe não existe um vertice com esse valor
+        return null;
+    }
+
 }
