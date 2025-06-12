@@ -23,4 +23,24 @@ public class Grafo<T> {
         return null;
     }
 
+    public void adicionarAresta(T origem, T destino, float peso){
+        Vertice<T> verticeOrigem, verticeDestino;
+        Aresta<T> novaAresta;
+        //Busca o vertice com o valor de origem
+        verticeOrigem = obterVertice(origem);
+        //Se ainda nao existe vertice com o valor da origem, vou criar o vertice
+        if(verticeOrigem==null)
+            verticeOrigem = adicionarVertice(origem);
+        //Busca o vertice com o valor do destino
+        verticeDestino = obterVertice(destino);
+        //Se ainda nao existe vertice com o valor destino, vou criar o vertice
+        if(verticeDestino==null)
+            verticeDestino = adicionarVertice(destino);
+        //Agora crio a aresta que vai da origem ao destino
+        novaAresta = new Aresta<T>(verticeOrigem, verticeDestino, peso);
+        //Adicionei a aresta a lista do Grafo
+        this.arestas.add(novaAresta);
+
+    }
+
 }
