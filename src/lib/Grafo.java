@@ -6,21 +6,36 @@ public class Grafo<T> {
     private ArrayList<Aresta<T>> arestas;
     private ArrayList<Vertice<T>> vertices;
 
-    public Vertice<T> adicionarVertice(T valor){
+    public Grafo() {
+        this.arestas = new ArrayList<>();
+        this.vertices = new ArrayList<>();
+    }
+
+    public ArrayList<Vertice<T>> getVertices() {
+        return vertices;
+    }
+
+    public ArrayList<Aresta<T>> getArestas() {
+        return arestas;
+    }
+
+
+    public Vertice<T> obterVertice(T valor) {
+        for (Vertice<T> v : this.vertices) {
+            if (v.getValor().equals(valor)) {
+                return v;
+            }
+        }
+        //Se chegou até aqui é porque não existe nenhum vértice com esse valor
+        return null;
+    }
+
+    public Vertice<T> adicionarVertice(T valor) {
+        Vertice<T> existente = obterVertice(valor);
+        if (existente != null) return existente;
         Vertice<T> novo = new Vertice<T>(valor);
         this.vertices.add(novo);
         return novo;
-    }
-
-    public Vertice<T> obterVertice(T valor){
-        Vertice<T> v;
-        for(int i=0;i<this.vertices.size();i++){
-            v=this.vertices.get(i);
-            if(v.getValor().equals(valor))
-                return v;
-        }
-        //Se chegou até aqui é poruqe não existe um vertice com esse valor
-        return null;
     }
 
     private ArrayList<Aresta<T>> obterDestinos(Vertice<T> v){
