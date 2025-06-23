@@ -23,8 +23,8 @@ public class Main {
 
             switch (opcao) {
                 case "1":
-                    System.out.print("Digite o caminho do arquivo: ");
-                    String caminho = scanner.nextLine();
+                    //System.out.print("Digite o caminho do arquivo: ");
+                    String caminho = "src/exemplos/grafo1.txt"; //scanner.nextLine();
                     grafo = LeitorDeArquivo.carregarGrafoDeArquivo(caminho);
                     if (grafo != null) {
                         System.out.println("Grafo carregado com sucesso.");
@@ -57,7 +57,9 @@ public class Main {
                     } else {
                         System.out.println("Menores distâncias a partir de " + origem + ":");
                         for (Map.Entry<String, Float> entry : distancias.entrySet()) {
-                            System.out.println("→ " + entry.getKey() + ": " + entry.getValue());
+                            float distancia = entry.getValue();
+                            String valorStr = Float.isInfinite(distancia) ? "Inalcançável" : String.valueOf(distancia);
+                            System.out.println("→ " + entry.getKey() + ": " + valorStr);
                         }
                     }
                     break;
